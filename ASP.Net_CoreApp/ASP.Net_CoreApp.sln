@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.Net_CoreApp", "ASP.Net_CoreApp\ASP.Net_CoreApp.csproj", "{55B9E659-65BA-41EB-B011-F30E15C29EDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.Net_CoreApp_EmptyProject", "ASP.Net_CoreApp\ASP.Net_CoreApp_EmptyProject.csproj", "{55B9E659-65BA-41EB-B011-F30E15C29EDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
