@@ -32,6 +32,8 @@ namespace ASP.Net_CoreApp
             //    await context.Response.WriteAsync("a=" + a);
             //    await next();
             //});
+
+            //Maping
             app.Map("/Main",(MainAppBilder)=>
             {
                 MainAppBilder.Map("/Index", (appbilder) =>
@@ -52,8 +54,9 @@ namespace ASP.Net_CoreApp
                 });
 
             });
+            //Use Midleware
 
-         
+            app.UseMiddleware<MainMiddelware>();
 
             app.Run(async (context) =>
             {
