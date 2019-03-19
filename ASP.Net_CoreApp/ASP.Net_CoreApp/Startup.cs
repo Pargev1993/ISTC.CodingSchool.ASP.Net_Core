@@ -26,29 +26,34 @@ namespace ASP.Net_CoreApp
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Use(async (context, next) =>
+            //app.Use(async (context, next) =>
+            //{
+            //    a = a + 2;
+            //    await context.Response.WriteAsync("a=" + a);
+            //    await next();
+            //});
+            app.Map("/Main",(MainAppBilder)=>
             {
-                a = a + 2;
-                await context.Response.WriteAsync("a=" + a);
-                await next();
+                MainAppBilder.Map("/Index", (appbilder) =>
+                {
+                    appbilder.Run(async (context) =>
+                    {
+                        await context.Response.WriteAsync("Hi Pargev");
+                    });
+
+                });
+
+                MainAppBilder.Map("/Home", (appbilder) =>
+                {
+                    appbilder.Run(async (context) =>
+                    {
+                        await context.Response.WriteAsync("Hello Pargev");
+                    });
+                });
+
             });
 
-            app.Map("/Index", (appbilder) =>
-             {
-                 appbilder.Run(async (context) =>
-                 {
-                     await context.Response.WriteAsync("Hi Pargev");
-                 });
-
-             });
-
-            app.Map("/Index/Home", (appbilder) =>
-             {
-                 appbilder.Run(async (context) =>
-                 {
-                     await context.Response.WriteAsync("Hello Pargev");
-                 });
-             });
+         
 
             app.Run(async (context) =>
             {
