@@ -29,7 +29,7 @@ namespace ASP.Net_Core_WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -39,7 +39,7 @@ namespace ASP.Net_Core_WebApi
             {
                 app.UseHsts();
             }
-
+            loggerFactory.AddConsole(Configuration.GetSection("LogLevel"));
             app.UseHttpsRedirection();
             app.UseMvc();
         }
